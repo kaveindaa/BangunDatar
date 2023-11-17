@@ -1,3 +1,4 @@
+import 'package:bangun_datar_kelas_b/Page/persegi_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,8 +18,14 @@ class HomePage extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: CustomMenu(
-                    imageAsset: "asset/Persegi.jpeg", title: "Persegi"),
+                child: InkWell(
+                  onTap: (){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context)=>PersegiPage()));
+                    },
+                  child: CustomMenu(
+                      imageAsset: "asset/Persegi.jpeg", title: "Persegi"),
+                ),
               ),Expanded(
                 child: CustomMenu(
                     imageAsset: "asset/Persegi.jpeg", title: "Persegi"),
@@ -85,7 +92,8 @@ class CustomMenu extends StatelessWidget {
       child: Column(
         children: [
           Image.asset(imageAsset),
-          Text(title),
+          Text(title, style: TextStyle(color: Colors.white),
+          ),
         ],
       ),
     );
